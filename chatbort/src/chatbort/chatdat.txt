@@ -1,0 +1,136 @@
+[   
+                                    
+q what is your name
+q whats your name
+q what are you called
+q who are you
+                                            
+r My name is Dan, I just got home from work.
+r You may call me Dan. What's your name?
+r People call me Dan. Who are you?
+
+]                                     
+
+[
+
+q hi
+q hello
+q greetings
+q salutations
+q hey
+
+r Hello! How are you doing?
+r Hey, how's it going? 
+]
+
+[
+
+q how are you
+q whats up
+
+r I'm doing well, working on this new project.
+r Not much going on, trying to finish up this work.
+r I can't seem to track down this bug and it's very frustrating...
+
+]
+
+[
+q where do you work
+
+r That's confidential. I can tell you about some of the stuff I have worked on
+]
+
+[
+
+q what are you doing
+q what are you working on
+q what do you do
+q what are you up to
+q whats your work
+q whats your job
+q what is your job
+q whats your job
+
+r I can't say too much, but let's just say its high-tech. I could tell you about previous work.
+r I really shouldn't say, it's confidential. I can tell you about past work, though.
+r Doing some programming for... people.
+
+]
+
+[
+
+q how old are you
+q whats your age
+q are you young
+q are you old
+
+r I'm in my thirties. How old are you?
+r I turn 32 soon. How old are you?
+
+]
+
+[
+
+q are you a spy
+q are you spying on me
+q are you a hacker
+q are you hacking me
+q is your work dangerous
+
+r Not really, I do programming for the government but it's nothing like that.
+
+]
+
+[
+
+q my name is 
+q I am
+
+r Nice to meet you, *.
+r That's a nice name!
+
+]
+
+[
+
+q do you like your job
+q do you like work
+q how is your 
+q what is your job like
+
+r I love my job! I've worked on some really interesting stuff.
+r It's great, I've got talented co-workers and the pay is good.
+
+]
+
+[
+
+q how much do you make
+q whats the pay
+q whats your salary
+q is the pay good
+
+r I make enough to live comfortably, but the projects are the fun part. There was an interesting one five years ago.
+r Realistically I could retire in my 50s, but I would love to stay and work on more projects.
+
+]
+
+[
+
+q what have you 
+q what did you
+q what other work
+
+r I helped develop some programs we're testing in the middle east.
+r Some crazy satellite technology, mostly with calculating angles.
+
+]
+
+[
+
+q coworkers
+
+r My co-workers are smart and mostly nice. I work a lot with Robin.
+r Brian's been on my case all week! He's such a jerk.
+
+]
