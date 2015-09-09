@@ -1,9 +1,8 @@
-package chatbort;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -123,6 +122,39 @@ public class ChatBot
     return key.toString().trim();
   }
   
+  public static ArrayList<String> adjacentCombinations(String s)
+  {
+    String [] words = s.split(" ");
+    ArrayList<String> combinations = new ArrayList<String>();
+    for (int i = words.length; i > 0; i--)
+    {
+      for (int j = 0; j + i <= words.length; j++)
+      {
+        combinations.add(joinWords(Arrays.copyOfRange(words, j, j + i)));
+      }
+    }
+    return combinations;
+  }
+  
+  /**
+   * Join an array of words into a sentence.
+   * @param words The array with the words of a sentence.
+   * @return The string comprising of the sentence.
+   */
+  public static String joinWords(String [] words)
+  {
+    if (words.length == 0) return "";
+    StringBuilder s = new StringBuilder(words[0]);
+    
+    for (int i = 1; i < words.length; i++)
+    {
+      s.append(' ');
+      s.append(words[i]);
+    }
+    
+    return s.toString();
+  }
+  
   /**
    * @param s The user's query.
    * @return A response if the query exists somewhere in the hashmap, or a
@@ -132,11 +164,23 @@ public class ChatBot
   {
     String key = stripPunctuationAndLowercase(s);
     
-    /* TODO: Break the key up into all possible adjoining words and see if any
-     * get a match.
+    /* Break the key up into all possible adjoining words and see if any get a
+     * match in the dictionary.
      */
     
-    ArrayList<String> vals = dictionary.get(key);
+    ArrayList<String> adjCombs = adjacentCombinations(key);
+    ArrayList<String> vals = null;
+    
+    for (String phrase : adjCombs)
+    {
+      ArrayList<String> curVals = dictionary.get(phrase);
+      if (curVals != null)
+      {
+        vals = curVals;
+        break;
+      }
+    }
+    
     if (vals == null)
     {
       return "Sorry, I was lost in thought.  Could we talk about something else?";
@@ -174,9 +218,9 @@ public class ChatBot
    */
   static class MalformedInputException extends Exception
   {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 	
-	public MalformedInputException(String line)
+    public MalformedInputException(String line)
     {
       super("Syntax error on token " + line);
     }
