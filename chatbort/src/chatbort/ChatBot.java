@@ -9,11 +9,16 @@ import java.util.Scanner;
 
 public class ChatBot
 {
+  public ChatBot() throws IOException, MalformedInputException
+  {
+    init();
+  }
+  
   /**
    * Location of the conversations file from which the dictionary will be
    * parsed and constructed.
    */
-  public static final String CONVERSATION_FILEPATH = "C:\\Users\\Robert\\Desktop\\chatbot\\chatbort\\chatbort\\src\\chatbort\\chatdat.txt";
+  public static final String CONVERSATION_FILEPATH = "chatbort/chatbort/src/chatbort/chatdat.txt";
   
   /**
    * The hashmap that stores input phrases and lists of possible corresponding
@@ -191,26 +196,26 @@ public class ChatBot
     }
   }
   
-  public static void main(String args[])
-  {
-    try
-    {
-      init();
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-      System.exit(-1);
-    }
-    
-    Scanner in = new Scanner(System.in);
-    while (true)
-    {
-      System.out.print("You: ");
-      String input = in.nextLine();
-      System.out.println("Dan: " + respond(input));
-    }
-  }
+//  public static void main(String args[])
+//  {
+//    try
+//    {
+//      init();
+//    }
+//    catch (Exception e)
+//    {
+//      e.printStackTrace();
+//      System.exit(-1);
+//    }
+//    
+//    Scanner in = new Scanner(System.in);
+//    while (true)
+//    {
+//      System.out.print("You: ");
+//      String input = in.nextLine();
+//      System.out.println("Dan: " + respond(input));
+//    }
+//  }
   
   /**
    * Exception class to handle parse errors in the input conversation file and
@@ -224,5 +229,10 @@ public class ChatBot
     {
       super("Syntax error on token " + line);
     }
+  }
+
+  public String setInput(String text)
+  {
+    return "Dan: " + respond(text) + "\n";
   }
 }
